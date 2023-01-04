@@ -1,0 +1,2 @@
+id,module,name,file,doc,markers,status,message,duration
+test_integration.py::test_budget_with_multiple_transactions,test_integration,test_budget_with_multiple_transactions,test_integration.py,,,passed,,0.0007064000237733126
