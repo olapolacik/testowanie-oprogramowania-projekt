@@ -2,7 +2,6 @@ from projekt import*
 import pytest
 
 # Testy jednostkowe
-
 def test_transaction():
     # Testujemy tworzenie transakcji z kwotą ujemną
     t = Transaction(-100, 'Wypłata', '2022-01-01')
@@ -21,6 +20,18 @@ def test_transaction():
     assert t.amount == 100
     assert t.description == 'Wypłata'
     assert t.date == ''
+
+def test_transaction_with_missing_amount():
+    with pytest.raises(ValueError):
+        t = Transaction(None, 'Wypłata', '2022-01-03')
+
+def test_transaction_with_missing_description():
+    with pytest.raises(ValueError):
+        t = Transaction(100, None, '2022-01-03')
+
+def test_transaction_with_missing_date():
+    with pytest.raises(ValueError):
+        t = Transaction(100, 'Wypłata', None)
 
 
 def test_budget():

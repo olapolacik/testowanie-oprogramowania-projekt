@@ -4,10 +4,15 @@ from unittest.mock import Mock
 # Aleksandra Połacik
 # Aplikacja do zarządzania budżetem domowym
 
-
 # Klasa reprezentująca pojedynczą transakcję
 class Transaction:
-    def __init__(self, amount, description, date):
+      def __init__(self, amount, description, date):
+        if amount is None:
+            raise ValueError("Brak kwoty w transakcji")
+        if description is None:
+            raise ValueError("Brak opisu w transakcji")
+        if date is None:
+            raise ValueError("Brak daty w transakcji")
         self.amount = amount
         self.description = description
         self.date = date
@@ -25,15 +30,16 @@ class Budget:
             report += f'{t.date}: {t.description} ({t.amount})\n'
         return report
 
-    # Metoda do dodawania transakcji
     def add_transaction(self, transaction):
-        self.transactions.append(transaction)
-        self.store.save_transaction(transaction)
+        if transaction.amount > 0:
+            self.transactions.append(transaction)
+            self.store.save_transaction(transaction)
 
     # Metoda do obliczania salda budżetu
     def get_balance(self):
         balance = 0
         for t in self.transactions:
-            balance += t.amount
+            if t.amount is not None:
+                balance += t.amount
         return balance
 
