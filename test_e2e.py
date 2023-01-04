@@ -14,8 +14,55 @@ def budget():
     b.add_transaction(t3)
     return b
 
-# Testy E2E/akceptacyjne z użyciem fixture'a
 
+def test_empty_budget_report(budget):
+    #Testowanie generowania raportu z pustym budżetem (bez transakcji) 
+    budget.transactions = []
+    report = budget.generate_report()
+    assert report == ''
+
+
+def test_single_transaction_report(budget):
+    #Testowanie generowania raportu z jedną transakcją
+    budget.transactions = [Transaction(100, 'Wypłata', '2022-01-01')]
+    report = budget.generate_report()
+    assert report == '2022-01-01: Wypłata (100)\n'
+
+
+def test_two_transactions_same_date_report(budget):
+    #Testowanie generowania raportu z dwoma transakcjami o tej samej dacie
+    budget.transactions = [
+    Transaction(100, 'Wypłata', '2022-01-01'),
+    Transaction(-50, 'Zakupy', '2022-01-01')
+    ]
+    report = budget.generate_report()
+    assert '2022-01-01: Wypłata (100)\n' in report
+    assert '2022-01-01: Zakupy (-50)\n' in report
+
+
+def test_two_transactions_same_amount_description_report(budget):
+    #dokończ Testowanie generowania raportu z dwoma transakcjami o tej samej kwocie i opisie 
+    budget.transactions = [
+    Transaction(100, 'Wypłata', '2022-01-01'),
+    Transaction(100, 'Wypłata', '2022-01-02')
+    ]
+    report = budget.generate_report()
+    assert '2022-01-01: Wypłata (100)' in report
+    assert '2022-01-02: Wypłata (100)' in report
+
+
+def test_two_transactions_different_amount_description_same_date_report(budget):
+    #Testowanie generowania raportu z dwoma transakcjami o różnych kwotach i opisach, ale tej samej dacie
+    budget.transactions = [
+    Transaction(100, 'Wypłata', '2022-01-01'),
+    Transaction(200, 'Zakupy', '2022-01-01')
+    ]
+    report = budget.generate_report()
+    assert '2022-01-01: Wypłata (100)' in report
+    assert '2022-01-01: Zakupy (200)' in report
+
+
+# Testy E2E/akceptacyjne 
 def test_end_to_end(budget):
     # Sprawdzamy, czy saldo jest poprawne
     assert budget.get_balance() == 30
