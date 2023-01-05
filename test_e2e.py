@@ -3,7 +3,7 @@ import pytest
 import csv
 
 
-def test_end_to_end(budget):
+def test_e2e(budget):
     # Sprawdzamy, czy saldo jest poprawne
     assert budget.get_balance() == 30
 
