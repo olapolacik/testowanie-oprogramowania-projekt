@@ -23,6 +23,10 @@ class Budget:
         self.store = store
         self.transactions = []
 
+    def add_transaction(self, transaction):
+        self.transactions.append(transaction)
+        self.store.save_transaction(transaction)
+
     # Metoda do generowania raportu
     def generate_report(self):
         report = ''
@@ -30,16 +34,9 @@ class Budget:
             report += f'{t.date}: {t.description} ({t.amount})\n'
         return report
 
-    def add_transaction(self, transaction):
-        if transaction.amount > 0:
-            self.transactions.append(transaction)
-            self.store.save_transaction(transaction)
-
     # Metoda do obliczania salda budżetu
     def get_balance(self):
         balance = 0
         for t in self.transactions:
-            if t.amount is not None:
-                balance += t.amount
+            balance += t.amount
         return balance
-

@@ -1,5 +1,26 @@
 from projekt import*
 import pytest
+import csv
+
+
+def test_end_to_end(budget):
+    # Sprawdzamy, czy saldo jest poprawne
+    assert budget.get_balance() == 30
+
+    # Generujemy raport
+    report = budget.generate_report()
+
+    # Sprawdzamy, czy raport zawiera odpowiednie informacje o transakcjach
+    assert '2022-01-01: Wypłata (100)' in report
+    assert '2022-01-02: Zakupy (-50)' in report
+    assert '2022-01-03: Tankowanie (-20)' in report
+
+    # Dodajemy wynik testu do pliku CSV
+    with open('report_csv_e2e.csv', mode='a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(['test_end_to_end', budget.get_balance()])
+
+
 
 # Fixture do tworzenia budżetu z mockowanym sklepem
 @pytest.fixture
