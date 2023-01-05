@@ -1,1 +1,10 @@
-name,result
+id,module,name,file,doc,markers,status,message,duration
+test_unit.py::test_budget_with_negative_transactions,test_unit,test_budget_with_negative_transactions,test_unit.py,,,passed,,0.0005821001250296831
+test_unit.py::test_transaction,test_unit,test_transaction,test_unit.py,,,passed,,0.00020139990374445915
+test_unit.py::test_transaction_with_missing_amount,test_unit,test_transaction_with_missing_amount,test_unit.py,,,passed,,0.00023080012761056423
+test_unit.py::test_transaction_with_missing_description,test_unit,test_transaction_with_missing_description,test_unit.py,,,passed,,0.00014440016821026802
+test_unit.py::test_transaction_with_missing_date,test_unit,test_transaction_with_missing_date,test_unit.py,,,passed,,0.00019249995239078999
+test_unit.py::test_budget_without_opis,test_unit,test_budget_without_opis,test_unit.py,,,passed,,0.0007923999801278114
+test_unit.py::test_budget_with_empty_date,test_unit,test_budget_with_empty_date,test_unit.py,,,passed,,0.0005743000656366348
+test_unit.py::test_budget_with_future_date,test_unit,test_budget_with_future_date,test_unit.py,,,passed,,0.0007980999071151018
+test_unit.py::test_budget_with_past_date,test_unit,test_budget_with_past_date,test_unit.py,,,passed,,0.0007315000984817743
