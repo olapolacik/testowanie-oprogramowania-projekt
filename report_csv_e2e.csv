@@ -15,3 +15,6 @@ test_unit.py::test_budget_without_opis,test_unit,test_budget_without_opis,test_u
 test_unit.py::test_budget_with_empty_date,test_unit,test_budget_with_empty_date,test_unit.py,,,passed,,0.0014812999870628119
 test_unit.py::test_budget_with_future_date,test_unit,test_budget_with_future_date,test_unit.py,,,passed,,0.0006075999699532986
 test_unit.py::test_budget_with_past_date,test_unit,test_budget_with_past_date,test_unit.py,,,passed,,0.0006568001117557287
+test_end_to_end,30
+test_end_to_end,30
+test_end_to_end,30
