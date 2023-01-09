@@ -10,7 +10,7 @@ See [the docs](https://docs.pytest.org/en/stable/how-to/cache.html) for more inf
 
 Oto przykładowa instrukcja, jak odpalić testy dla aplikacji budżetu domowego:
 
-![alt text](https://png.pngtree.com/png-clipart/20220430/original/pngtree-programming-concept-in-3d-isometric-outline-design-developer-works-with-code-png-image_7601753.png)
+![alt text](file:///C:/Users/Ola/Downloads/undraw_to_do_list_re_9nt7.svg)
 
 1. Uruchom terminal w katalogu z projektem.
 
