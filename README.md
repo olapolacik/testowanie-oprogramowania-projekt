@@ -10,6 +10,8 @@ See [the docs](https://docs.pytest.org/en/stable/how-to/cache.html) for more inf
 
 Oto przykładowa instrukcja, jak odpalić testy dla aplikacji budżetu domowego:
 
+![alt text](https://pngtree.com/freepng/devops-concept-in-3d-isometric-outline-design-programmers-and-engineers-working-together-at-office-administration-of-development-operations-line-web-template-vector-illustration-with-people-scene_7601747.html)
+
 1. Uruchom terminal w katalogu z projektem.
 
 2. Upewnij się, że masz zainstalowane wszystkie wymagane zależności, takie jak pytest i ewentualne wtyczki (np. pytest-html lub pytest-csv). Możesz to zrobić, używając polecenia:
