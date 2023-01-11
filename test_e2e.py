@@ -62,7 +62,7 @@ def test_two_transactions_same_date_report(budget):
 
 
 def test_two_transactions_same_amount_description_report(budget):
-    #dokończ Testowanie generowania raportu z dwoma transakcjami o tej samej kwocie i opisie 
+    #Testowanie generowania raportu z dwoma transakcjami o tej samej kwocie i opisie 
     budget.transactions = [
     Transaction(100, 'Wypłata', '2022-01-01'),
     Transaction(100, 'Wypłata', '2022-01-02')
